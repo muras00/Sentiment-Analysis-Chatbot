@@ -1,0 +1,166 @@
+version: "3.1"
+
+actions:
+  - action_suggest_remedies
+  - action_suggest_exercises
+  - action_suggest_films
+  - action_analyze_sentiment
+  - action_save_option
+  - action_reset_sentiment
+  - action_reset_option
+
+slots:
+  sentiment:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: sentiment
+  option:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: option
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - affirm
+  - deny
+  - hint_mood
+  - gratitude
+  - select_option
+  - ask_diagnosis
+  - do_not_have
+  - exercise
+  - remedy
+  - film
+  - grocery
+  - eating out
+  - drink
+  - toxic
+  - sweeteners
+  - urgent
+
+entities:
+  - disorders
+  - disorders_adj
+  - adverbs
+  - disorders_symptoms
+  - sentiment
+  - option
+
+responses:
+  utter_greet:
+  - text: "Hello! How are you?"
+
+  utter_goodbye:
+  - text: "Goodbye!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "I am happy for you!"
+  - text: "That sounds great!"
+
+  utter_res_to_sa:
+  - condition:
+      - type: slot
+        name: sentiment
+        value: pos
+    text: "That sounds great!"
+  - condition:
+      - type: slot
+        name: sentiment
+        value: neg
+    text: "I'm sorry to hear that.\n
+    The following things are what we can do to help you: \n
+    (1) Provide contacts of local authorities\n
+    (2) Provide the appropriate hotline numbers\n
+    (3) Suggest an on-the-spot remedy\n
+    Please select 1, 2, or 3: "
+
+  utter_res_to_option:
+  - condition:
+      - type: slot
+        name: option
+        value: "1"
+    text: "Here are the contact list for local authorities\n
+    UK police/ambulance: 999 or 112\n
+    US police: 911\n
+    Europe emergency: 112\n
+    Did that help you?"
+  - condition:
+      - type: slot
+        name: option
+        value: "2"
+    text: "Try calling the following hotlines\n
+    UK - NHS: 111\n
+    US mental health hotline: 988\n
+    If not, try to book an appointment with local professional\n
+    Did that help you?"
+  - condition:
+      - type: slot
+        name: option
+        value: "3"
+    text: ""
+  - condition:
+      - type: slot
+        name: option
+        value: unrec
+    text: "I didn't understand that. Please choose 1, 2, or 3."
+
+  utter_confirmed_emergency:
+  - text: "Here are the contact list for local authorities\nUK police/ambulance: 999 or 112\nUS police: 911\nEurope emergency: 112"
+
+  utter_ask_hotline:
+  - text: "Would you like to contact a qualified professional?"
+
+  utter_confirmed_hotline:
+  - text: "Try calling the following hotlines\nUK - NHS: 111\nUS mental health hotline: 988\nIf not, try to book an appointment with local professional"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_ur_welcome:
+    - text: "You're welcome!"
+
+  utter_encourage_grocery:
+  - text: "How about you try and get one during your next errand? :)"
+
+  utter_what_to_buy:
+    - text: "Get some fruits and veggies in your system!"
+    - text: "How about some hot chocolate, coffee, or tea?"
+    - text: "No soda or diet drinks!"
+    - text: "Non-refined grains are really good for you"
+
+  utter_where_to_eat:
+    - text: "Def some mediterranean food!"
+    - text: "Italian, maybe?"
+    - text: "How about a greek restaurant?"
+
+  utter_what_to_drink:
+    - text: "How about some hot chocolate, coffee, or tea?"
+    - text: "No soda or diet drinks!"
+
+  utter_stop:
+    - text: "Stop it now!"
+    - text: "That's really bad for you"
+
+  utter_encourage:
+    - text: "A little bit is okay"
+    - text: "It's fine in moderation"
+    - text: "Sounds perfectly fine to me!"
+
+  utter_refuse_diagnosis:
+  - text: "I'm sorry I can't help you with that.\nWould you like to try looking for a local qualified professional?"
+  - text: "Sorry I can't be of much help!\nMaybe try looking for a professional nearby?"
+  - text: "I'm not qualified to perform a diagnosis.\nHow about looking for a qualified professional?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

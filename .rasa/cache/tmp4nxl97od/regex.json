@@ -1,0 +1,18 @@
+[
+  {
+    "name": "unhappy_adj",
+    "pattern": "(\\bdepressed\\b|\\bdepressing\\b|\\bill\\b|\\bsick\\b|\\bdown\\b|\\bbad\\b|\\bhorrible\\b|\\bterrible\\b|\\bsad\\b|\\bsaad\\b|\\bnot\\ well\\b|\\bnot\\ very\\ well\\b|\\bnot\\ so\\ well\\b|\\bdisappointed\\b|\\bunhappy\\b|\\bnot\\ good\\b|\\bnot\\ very\\ good\\b|\\bnot\\ so\\ good\\b|\\bill\\b|\\bsick\\b|\\bstressed\\b|\\bstressful\\b|\\bin\\ panick\\b|\\bpanicked\\b|\\bscared\\b|\\blonely\\b|\\btraumatized\\b|\\btraumatizing\\b)"
+  },
+  {
+    "name": "disorders_symptoms",
+    "pattern": "(\\bpanick\\b|\\bpanick\\ attack\\b|\\btrauma\\b|\\banxiety\\ attack\\b)"
+  },
+  {
+    "name": "adverbs",
+    "pattern": "(\\bunfortunately\\b|\\bvery\\b|\\bextremely\\b|\\bextremly\\b|\\bmentally\\b|\\bso\\b|\\bsuper\\b|\\breally\\b)"
+  },
+  {
+    "name": "disorders",
+    "pattern": "(\\badhd\\b|\\bocd\\b|\\bautism\\b|\\bdepression\\b|\\bbipolar\\ disorder\\b|\\beating\\ disorder\\b|\\bptsd\\b|\\banxiety\\b|\\bmental\\ disorder\\b|\\bdementia\\b|\\bdisorder\\b)"
+  }
+]

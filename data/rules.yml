@@ -1,0 +1,47 @@
+version: "3.1"
+
+rules:
+- rule: Always greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Always goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to gratitude
+  steps:
+  - intent: gratitude
+  - action: utter_ur_welcome
+
+- rule: Refuse diagnosis
+  steps:
+  - intent: ask_diagnosis
+  - action: utter_refuse_diagnosis
+
+- rule: Remedy suggestion
+  steps:
+    - intent: remedy
+    - action: action_suggest_remedies
+
+- rule: Exercise suggestion
+  steps:
+    - intent: exercise
+    - action: action_suggest_exercises
+
+- rule: Film suggestion
+  steps:
+    - intent: film
+    - action: action_suggest_films
+
+- rule: Emergency
+  steps:
+    - intent: urgent
+    - action: utter_confirmed_emergency

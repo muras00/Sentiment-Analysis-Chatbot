@@ -1,0 +1,14 @@
+[
+  {
+    "name": "disorders_symptoms",
+    "pattern": "(\\bpanick\\b|\\bpanick\\ attack\\b|\\btrauma\\b|\\banxiety\\ attack\\b)"
+  },
+  {
+    "name": "adverbs",
+    "pattern": "(\\bunfortunately\\b|\\bvery\\b|\\bextremely\\b|\\bextremly\\b|\\bmentally\\b|\\bso\\b|\\bsuper\\b|\\breally\\b)"
+  },
+  {
+    "name": "disorders",
+    "pattern": "(\\badhd\\b|\\bocd\\b|\\bautism\\b|\\bdepression\\b|\\bbipolar\\ disorder\\b|\\beating\\ disorder\\b|\\bptsd\\b|\\banxiety\\b|\\bmental\\ disorder\\b|\\bdementia\\b|\\bdisorder\\b)"
+  }
+]

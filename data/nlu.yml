@@ -1,0 +1,233 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+
+- intent: hint_mood
+  examples: |
+    - my day was
+    - i am [really]{"entity": "adverbs"}
+    - i feel
+    - i'm feeling
+    - i am feeling
+    - i don't feel [so]{"entity": "adverbs"}
+    - i do not feel
+    - i'm not feeling []{"entity": "adverbs", value: ""}
+    - i am not feeling
+    - i had a [panick attack]{"entity": "disorders_symptoms"}
+    - i had an [anxiety attack]{"entity": "disorders_symptoms"}
+
+- lookup: disorders_symptoms
+  examples: |
+    - panick
+    - panick attack
+    - trauma
+    - anxiety attack
+
+- lookup: adverbs
+  examples: |
+    - unfortunately
+    - very
+    - extremely
+    - extremly
+    - mentally
+    - so
+    - super
+    - really
+
+- intent: gratitude
+  examples: |
+    - thank you
+    - thanks
+    - thnx
+
+- intent: select_option
+  examples: |
+    - I choose 1
+    - My choice is 2
+    - Option 3
+    - 1
+    - 2
+    - 3
+
+- intent: do_not_have
+  examples: |
+    - i don't have cocoa
+    - i do not have hot chocolate
+    - do not have coffee
+    - dont have tea
+    - don't have ingredients
+
+- intent: eating out
+  examples: |
+    - should eat
+    - recommend eating
+    - suggest eating
+    - what's for dinner
+    - lunch outside
+    - brunch place
+    - any restaurant suggestions
+    - restaurant recommendations
+
+- intent: drink
+  examples: |
+    - thirsty
+    - what to drink
+    - any drinks
+    - drink recommendations
+    - suggest a drink
+
+- intent: toxic
+  examples: |
+    - drink diet drinks
+    - consume soda
+    - intake artificial sweeteners
+    - think of artificial additives
+
+- intent: sweeteners
+  examples: |
+    - is honey okay
+    - natural sugar is fine
+    - little bit of honey
+    - sugar should be harmless
+
+- intent: grocery
+  examples: |
+    - what to buy
+    - what should i buy
+    - grocery
+    - grocery shopping
+    - market
+    - grocery store
+    - super market
+
+- intent: exercise
+  examples: |
+    - exercise
+    - workout
+
+- intent: remedy
+  examples: |
+    - remedy
+    - remedies
+    - treatment
+
+- intent: film
+  examples: |
+    - film
+    - movie
+    - comedy film
+    - comedy movie
+    - funny movie
+
+- intent: urgent
+  examples: |
+    - emergency
+    - urgent help
+    - police
+    - ambulance
+    - want to call police
+    - can't breathe
+
+- intent: ask_diagnosis
+  examples: |
+    - i have [adhd]{"entity": "disorders"}
+    - i might have a [disorder]{"entity": "disorders"}
+    - i may have a [disorder]{"entity": "disorders"}
+    - i could have a [disorder]{"entity": "disorders"}
+    - i think they have a [disorder]{"entity": "disorders"}
+    - she thinks she has a [disorder]{"entity": "disorders"}
+    - could you check if i have a [disorder]{"entity": "disorders"}
+    - perform diagnosis
+    - do diagnosis
+    - diagnose
+
+- lookup: disorders
+  examples: |
+    - adhd
+    - ocd
+    - autism
+    - depression
+    - bipolar disorder
+    - eating disorder
+    - ptsd
+    - anxiety
+    - mental disorder
+    - dementia
+    - disorder
+
+- lookup: disorders_adj
+  examples: |
+    - autistic
+    - depressed
+    - obese
+    - anorexic
+    - ill
+    - sick
+    - mentally ill
+    - mentally sick
+
+- synonym: mental disorder
+  examples: |
+    - mental disability
+    - psychiatric disability
+    - mental disease
+    - mental health condition
+    - mental health problems
+    - mental illness
+    - emotional disorder
+    - mood disorder

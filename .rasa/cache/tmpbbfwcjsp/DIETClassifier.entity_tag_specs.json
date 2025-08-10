@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-adverbs",
+      "2": "I-adverbs",
+      "3": "L-adverbs",
+      "4": "U-adverbs",
+      "5": "B-disorders",
+      "6": "I-disorders",
+      "7": "L-disorders",
+      "8": "U-disorders",
+      "9": "B-disorders_symptoms",
+      "10": "I-disorders_symptoms",
+      "11": "L-disorders_symptoms",
+      "12": "U-disorders_symptoms",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-adverbs": 1,
+      "I-adverbs": 2,
+      "L-adverbs": 3,
+      "U-adverbs": 4,
+      "B-disorders": 5,
+      "I-disorders": 6,
+      "L-disorders": 7,
+      "U-disorders": 8,
+      "B-disorders_symptoms": 9,
+      "I-disorders_symptoms": 10,
+      "L-disorders_symptoms": 11,
+      "U-disorders_symptoms": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+- story: hint mood path
+  steps:
+  - intent: hint_mood
+  - action: action_analyze_sentiment
+  - action: utter_res_to_sa
+
+- story: select option path
+  steps:
+    - intent: select_option
+    - action: action_save_option
+    - action: utter_res_to_option
+
+- story: remedy path 2
+  steps:
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+    - action: action_reset_sentiment
+    - action: action_reset_option
+
+- story: remedy path 3
+  steps:
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_res_to_sa
+    - action: action_reset_option
+
+- story: refuse diagnosis 1
+  steps:
+    - intent: ask_diagnosis
+    - action: utter_refuse_diagnosis
+    - intent: affirm
+    - action: utter_confirmed_hotline
+
+- story: refuse diagnosis 2
+  steps:
+    - intent: ask_diagnosis
+    - action: utter_refuse_diagnosis
+    - intent: deny
+    - action: action_suggest_remedies
+
+- story: encourage grocery
+  steps:
+    - intent: do_not_have
+    - action: utter_encourage_grocery
+    - intent: grocery
+    - action: utter_what_to_buy
+
+- story: eating out
+  steps:
+    - intent: eating out
+    - action: utter_where_to_eat
+
+- story: drink path 1
+  steps:
+    - intent: drink
+    - action: utter_what_to_drink
+    - intent: toxic
+    - action: utter_stop
+
+- story: drink path 2
+  steps:
+    - intent: drink
+    - action: utter_what_to_drink
+    - intent: sweeteners
+    - action: utter_encourage

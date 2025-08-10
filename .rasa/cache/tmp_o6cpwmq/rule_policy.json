@@ -1,0 +1,22 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_analyze_sentiment",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"analyze_sentiment\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_pos_sentiment\"}, \"slots\": {\"sentiment\": [1.0]}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_neg_sentiment\"}, \"slots\": {\"sentiment\": [1.0]}}]": "action_listen"
+    },
+    "rule_only_slots": [
+      "sentiment"
+    ],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"utter_pos_sentiment\"}, \"slots\": {\"sentiment\": [1.0]}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"utter_neg_sentiment\"}, \"slots\": {\"sentiment\": [1.0]}}]",
+      "predicting default action with intent back"
+    ]
+  }
+}
