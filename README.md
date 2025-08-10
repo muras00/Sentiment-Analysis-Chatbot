@@ -6,8 +6,6 @@ AIを用いたメンタルヘルス支援チャットボットの研究<br>
 工夫点：RasaフレームワークにLSTMモデルを統合し、チャットボットに自然言語のコンテキスト認識能力を付加しました。<br>
 自身の貢献：データ収集・前処理からモデル構築・統合、エバリュエーションに渡るまで取り組みました。<br>
 
-<br>
-
 論文採択・投稿歴：
 ・2024年 第2回 International Conference on Computing and Data Analytics (ICCDA) にて採択・発表
  https://ieeexplore.ieee.org/document/10867341
