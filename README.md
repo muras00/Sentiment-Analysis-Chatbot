@@ -9,3 +9,12 @@ AIを用いたメンタルヘルス支援チャットボットの研究<br>
 論文採択・投稿歴：
 ・2024年 第2回 International Conference on Computing and Data Analytics (ICCDA) にて採択・発表
  https://ieeexplore.ieee.org/document/10867341
+
+How to run (terminal command line):
+*conda activate rasa*
+*rasa run actions*
+
+パッケージバージョン
+python=3.10.11
+tensorflow=2.14.1
+transformers=4.37.2
